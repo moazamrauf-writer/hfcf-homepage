@@ -6,7 +6,17 @@
 <title>Our Team | Holistic Foster Care Foundation</title>
 <meta http-equiv="refresh" content="0; url=about.html#team">
 <link rel="canonical" href="about.html#team">
-<!--hfcf-mobile--><style id="hfcf-mobile">
+
+<!--hfcf-mobile--><meta name="color-scheme" content="only light"><style id="hfcf-mobile">
+:root{color-scheme:only light}
+/* lock readable colours on mint surfaces, whatever the browser's dark mode does */
+[style*="background:#00FFC8"],[style*="background:#00FFC8"] :not([style*="background"]):not([style*="color:#fff"]):not([style*="color:#00FFC8"]),[style*="background: rgb(0, 255, 200)"],[style*="background: rgb(0, 255, 200)"] :not([style*="background"]){color:#020D19!important;-webkit-text-fill-color:#020D19!important}
+[style*="background:#00FFC8"] svg *,[style*="background: rgb(0, 255, 200)"] svg *{-webkit-text-fill-color:initial}
+[style*="color:#00B894"]{color:#00775F!important}
+a[aria-label="Give now"],a[aria-label="Give now"] *{color:#020D19!important;-webkit-text-fill-color:#020D19!important}
+header>nav a:last-child{-webkit-text-fill-color:#020D19!important}
+#g-presets button[aria-pressed="true"],#g-presets button[aria-pressed="true"] *,#cal-presets button[aria-pressed="true"]{-webkit-text-fill-color:#ffffff!important}
+
 .hfcf-burger{display:none}
 @media (max-width:900px){
 header{flex-wrap:wrap!important;padding:14px 20px!important;gap:10px!important;align-items:center!important}
@@ -17,8 +27,11 @@ header>a:first-child img{height:34px!important}
 header>nav{display:none!important;flex-direction:column;align-items:stretch!important;flex-wrap:nowrap!important;gap:0!important;width:100%;order:3;background:rgba(2,13,25,.96);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:6px 18px 14px;box-sizing:border-box;font-size:17px!important}
 header.hfcf-open>nav{display:flex!important}
 header>nav a{display:block;padding:14px 2px!important;border-bottom:1px solid rgba(255,255,255,.12)!important}
-header>nav a:last-child{margin-top:14px;text-align:center;border:2px solid #00FFC8!important;border-radius:100px;padding:13px 20px!important;color:#fff}
+header>nav a:last-child{margin-top:14px;text-align:center;border:2px solid #00FFC8!important;border-radius:100px;padding:13px 20px!important;background:#00FFC8;color:#020D19!important;font-weight:700}
 header>div:last-child{display:none!important}
+.hfcf-marquee{overflow-x:auto!important;overflow-y:hidden!important;-webkit-overflow-scrolling:touch;scrollbar-width:none;overscroll-behavior-x:contain}
+.hfcf-marquee::-webkit-scrollbar{display:none}
+.hfcf-track{animation:none!important}
 header.hfcf-open>div:last-child{display:block!important;order:4;width:100%}
 }
 @media (max-width:640px){
@@ -26,7 +39,7 @@ html{-webkit-text-size-adjust:100%}
 section{padding-left:20px!important;padding-right:20px!important}
 section[style*="padding:72px"],section[style*="padding:80px"],section[style*="padding:88px"],section[style*="padding:64px"]{padding-top:52px!important;padding-bottom:52px!important}
 [style*="padding:56px 48px 88px"],[style*="padding:48px 48px 88px"],[style*="padding:40px 48px 96px"]{padding:28px 20px 56px!important}
-[style*="padding:72px 48px 36px"],[style*="padding:28px 48px"],[style*="padding:24px 48px"]{padding-left:20px!important;padding-right:20px!important}
+[style*="padding:0 48px"],[style*="padding:72px 48px 36px"],[style*="padding:28px 48px"],[style*="padding:24px 48px"]{padding-left:20px!important;padding-right:20px!important}
 section[style*="min-height:780px"]{min-height:0!important}
 h1{font-size:clamp(32px,9vw,40px)!important;line-height:1.14!important}
 h2{font-size:clamp(26px,7.4vw,32px)!important;line-height:1.2!important}
@@ -42,16 +55,36 @@ p[style*="font-size:19px"]{font-size:17px!important}
 .hfcf-track [style*="width:56px"] svg{width:24px;height:24px}
 /* grids */
 [style*="minmax(340px"],[style*="minmax(320px"],[style*="minmax(250px"],[style*="minmax(230px"]{grid-template-columns:minmax(0,1fr)!important}
-figure[style*="flex:1 1 250px"]{flex:1 1 calc(50% - 8px)!important;min-width:0!important}
-figure[style*="flex:1 1 250px"] figcaption,figure[style*="flex:1 1 250px"] span,figure[style*="flex:1 1 250px"] p{font-size:14px!important}
+figure[style*="flex:1 1 250px"]{flex:1 1 calc(50% - 11px)!important;min-width:0!important}
+figure[style*="flex:1 1 250px"] figcaption{padding:14px!important;gap:8px!important}
+figure[style*="flex:1 1 250px"] blockquote{font-size:15px!important;line-height:1.4!important}
+figure[style*="flex:1 1 250px"] figcaption span{font-size:13px!important}
 /* donation + calculator forms */
 #g-funds{grid-template-columns:minmax(0,1fr)!important}
-#g-presets button{font-size:16px!important;padding:14px 4px!important}
+#g-custom{font-size:16px!important}
+#g-presets button,#cal-presets button{font-size:16px!important;padding:14px 4px!important}
+input[inputmode="numeric"]{font-size:16px!important}
+.hfcf-g4:has(>article>img[style*="aspect-ratio:1/1"]),.hfcf-g3:has(>article>img[style*="aspect-ratio:1/1"]){grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
+article>img[style*="aspect-ratio:1/1"]+div{padding:12px 14px 16px!important}
+article>img[style*="aspect-ratio:1/1"]+div h3{font-size:16px!important;line-height:1.25!important}
+article>img[style*="aspect-ratio:1/1"]+div span{font-size:13px!important}
+article>img[style*="aspect-ratio:1/1"]+div p{font-size:14.5px!important;line-height:1.5!important}
 form#give-form{padding:22px!important;max-width:100%!important}
 [id^="zc-"] input{font-size:17px}
 table th,table td{padding-left:6px!important;padding-right:6px!important}
+/* selected amounts: navy with white text for clear contrast */
+#g-presets button[aria-pressed="true"],#cal-presets button[aria-pressed="true"]{background:#020D19!important;color:#ffffff!important;border-color:#020D19!important}
+/* Meet the Girls: photo first, text right under it */
+#stories>div{gap:22px!important}
+#hfcf-track>div{flex-wrap:nowrap!important;flex-direction:column!important;gap:16px!important;align-items:stretch!important}
+#hfcf-track>div>img{order:-1;flex:none!important;width:100%!important;max-width:100%!important;aspect-ratio:16/10!important;border-radius:16px!important;object-position:center 22%}
+#hfcf-track>div>div{flex:none!important;gap:10px!important}
+#hfcf-track h3{font-size:28px!important}
+#hfcf-track p{font-size:16px!important;line-height:1.55!important}
+#hfcf-track blockquote{padding-left:16px!important}
+#hfcf-track blockquote span:first-child{font-size:17px!important;line-height:1.45!important}
 /* floating give button */
-a[aria-label="Give now"]{right:14px!important;bottom:14px!important;padding:11px 18px!important;font-size:15px!important;transition:opacity .25s ease,transform .25s ease!important}
+a[aria-label="Give now"]{color:#020D19!important;background:#00FFC8!important;font-weight:800!important;right:14px!important;bottom:14px!important;padding:11px 18px!important;font-size:15px!important;transition:opacity .25s ease,transform .25s ease!important}
 .hfcf-fab-hide a[aria-label="Give now"]{opacity:0!important;pointer-events:none!important;transform:translateY(12px)!important}
 /* footer */
 footer{padding-left:20px!important;padding-right:20px!important}
@@ -65,6 +98,7 @@ footer{padding-left:20px!important;padding-right:20px!important}
 <body>
 <p>Our team now lives on the <a href="about.html#team">About Us page</a>.</p>
 <script>location.replace("about.html#team");</script>
+
 <!--hfcf-mobile--><script>
 (function(){
 function init(){
@@ -82,6 +116,38 @@ nav.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
 h.insertBefore(b,nav);
 });
+
+var mq2=window.matchMedia('(max-width:900px)'),rm=window.matchMedia('(prefers-reduced-motion:reduce)');
+var st=[];
+document.querySelectorAll('.hfcf-marquee').forEach(function(m){
+var t=m.querySelector('.hfcf-track');if(!t)return;
+var s={m:m,t:t,pos:0,paused:false,timer:0,vis:true,speed:m.closest('#campaigns')?28:60};
+function half(){return t.scrollWidth/2;}
+function later(){clearTimeout(s.timer);s.timer=setTimeout(function(){s.pos=m.scrollLeft;s.paused=false;},3500);}
+function stop(){s.paused=true;clearTimeout(s.timer);if(m.scrollLeft<2)m.scrollLeft=m.scrollLeft+half();}
+m.addEventListener('touchstart',stop,{passive:true});
+m.addEventListener('touchend',later,{passive:true});
+m.addEventListener('touchcancel',later,{passive:true});
+m.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')stop();});
+m.addEventListener('pointerup',function(e){if(e.pointerType!=='touch')later();});
+m.addEventListener('scroll',function(){
+var h=half();
+if(m.scrollLeft>=h){m.scrollLeft=m.scrollLeft-h;if(!s.paused)s.pos-=h;}
+else if(s.paused&&m.scrollLeft<=0){m.scrollLeft=h;}
+if(s.paused)later();
+},{passive:true});
+if('IntersectionObserver' in window){new IntersectionObserver(function(es){s.vis=es[0].isIntersecting;if(s.vis&&!s.paused)s.pos=m.scrollLeft;}).observe(m);}
+st.push(s);
+});
+var last=0;
+function tick(now){
+var dt=Math.min(now-last,50)/1000;last=now;
+if(mq2.matches&&!rm.matches&&!document.hidden){
+st.forEach(function(s){if(s.paused||!s.vis)return;s.pos+=s.speed*dt;s.m.scrollLeft=s.pos;});
+}
+requestAnimationFrame(tick);
+}
+if(st.length)requestAnimationFrame(function(n){last=n;tick(n);});
 var mq=window.matchMedia('(max-width:640px)');
 function fab(){document.documentElement.classList.toggle('hfcf-fab-hide',mq.matches&&window.scrollY<500);}
 window.addEventListener('scroll',fab,{passive:true});mq.addEventListener&&mq.addEventListener('change',fab);fab();
