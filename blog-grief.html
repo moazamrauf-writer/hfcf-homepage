@@ -48,7 +48,16 @@ section>div[style*="max-width"]>*:not(.hfcf-g3):not(.hfcf-g4){animation:hfcf-ris
 }
 
 </style>
-<!--hfcf-mobile--><style id="hfcf-mobile">
+<!--hfcf-mobile--><meta name="color-scheme" content="only light"><style id="hfcf-mobile">
+:root{color-scheme:only light}
+/* lock readable colours on mint surfaces, whatever the browser's dark mode does */
+[style*="background:#00FFC8"],[style*="background:#00FFC8"] :not([style*="background"]):not([style*="color:#fff"]):not([style*="color:#00FFC8"]),[style*="background: rgb(0, 255, 200)"],[style*="background: rgb(0, 255, 200)"] :not([style*="background"]){color:#020D19!important;-webkit-text-fill-color:#020D19!important}
+[style*="background:#00FFC8"] svg *,[style*="background: rgb(0, 255, 200)"] svg *{-webkit-text-fill-color:initial}
+[style*="color:#00B894"]{color:#00775F!important}
+a[aria-label="Give now"],a[aria-label="Give now"] *{color:#020D19!important;-webkit-text-fill-color:#020D19!important}
+header>nav a:last-child{-webkit-text-fill-color:#020D19!important}
+#g-presets button[aria-pressed="true"],#g-presets button[aria-pressed="true"] *,#cal-presets button[aria-pressed="true"]{-webkit-text-fill-color:#ffffff!important}
+
 .hfcf-burger{display:none}
 @media (max-width:900px){
 header{flex-wrap:wrap!important;padding:14px 20px!important;gap:10px!important;align-items:center!important}
@@ -59,8 +68,11 @@ header>a:first-child img{height:34px!important}
 header>nav{display:none!important;flex-direction:column;align-items:stretch!important;flex-wrap:nowrap!important;gap:0!important;width:100%;order:3;background:rgba(2,13,25,.96);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:6px 18px 14px;box-sizing:border-box;font-size:17px!important}
 header.hfcf-open>nav{display:flex!important}
 header>nav a{display:block;padding:14px 2px!important;border-bottom:1px solid rgba(255,255,255,.12)!important}
-header>nav a:last-child{margin-top:14px;text-align:center;border:2px solid #00FFC8!important;border-radius:100px;padding:13px 20px!important;color:#fff}
+header>nav a:last-child{margin-top:14px;text-align:center;border:2px solid #00FFC8!important;border-radius:100px;padding:13px 20px!important;background:#00FFC8;color:#020D19!important;font-weight:700}
 header>div:last-child{display:none!important}
+.hfcf-marquee{overflow-x:auto!important;overflow-y:hidden!important;-webkit-overflow-scrolling:touch;scrollbar-width:none;overscroll-behavior-x:contain}
+.hfcf-marquee::-webkit-scrollbar{display:none}
+.hfcf-track{animation:none!important}
 header.hfcf-open>div:last-child{display:block!important;order:4;width:100%}
 }
 @media (max-width:640px){
@@ -101,8 +113,19 @@ article>img[style*="aspect-ratio:1/1"]+div p{font-size:14.5px!important;line-hei
 form#give-form{padding:22px!important;max-width:100%!important}
 [id^="zc-"] input{font-size:17px}
 table th,table td{padding-left:6px!important;padding-right:6px!important}
+/* selected amounts: navy with white text for clear contrast */
+#g-presets button[aria-pressed="true"],#cal-presets button[aria-pressed="true"]{background:#020D19!important;color:#ffffff!important;border-color:#020D19!important}
+/* Meet the Girls: photo first, text right under it */
+#stories>div{gap:22px!important}
+#hfcf-track>div{flex-wrap:nowrap!important;flex-direction:column!important;gap:16px!important;align-items:stretch!important}
+#hfcf-track>div>img{order:-1;flex:none!important;width:100%!important;max-width:100%!important;aspect-ratio:16/10!important;border-radius:16px!important;object-position:center 22%}
+#hfcf-track>div>div{flex:none!important;gap:10px!important}
+#hfcf-track h3{font-size:28px!important}
+#hfcf-track p{font-size:16px!important;line-height:1.55!important}
+#hfcf-track blockquote{padding-left:16px!important}
+#hfcf-track blockquote span:first-child{font-size:17px!important;line-height:1.45!important}
 /* floating give button */
-a[aria-label="Give now"]{right:14px!important;bottom:14px!important;padding:11px 18px!important;font-size:15px!important;transition:opacity .25s ease,transform .25s ease!important}
+a[aria-label="Give now"]{color:#020D19!important;background:#00FFC8!important;font-weight:800!important;right:14px!important;bottom:14px!important;padding:11px 18px!important;font-size:15px!important;transition:opacity .25s ease,transform .25s ease!important}
 .hfcf-fab-hide a[aria-label="Give now"]{opacity:0!important;pointer-events:none!important;transform:translateY(12px)!important}
 /* footer */
 footer{padding-left:20px!important;padding-right:20px!important}
@@ -284,6 +307,38 @@ nav.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
 h.insertBefore(b,nav);
 });
+
+var mq2=window.matchMedia('(max-width:900px)'),rm=window.matchMedia('(prefers-reduced-motion:reduce)');
+var st=[];
+document.querySelectorAll('.hfcf-marquee').forEach(function(m){
+var t=m.querySelector('.hfcf-track');if(!t)return;
+var s={m:m,t:t,pos:0,paused:false,timer:0,vis:true,speed:m.closest('#campaigns')?28:60};
+function half(){return t.scrollWidth/2;}
+function later(){clearTimeout(s.timer);s.timer=setTimeout(function(){s.pos=m.scrollLeft;s.paused=false;},3500);}
+function stop(){s.paused=true;clearTimeout(s.timer);if(m.scrollLeft<2)m.scrollLeft=m.scrollLeft+half();}
+m.addEventListener('touchstart',stop,{passive:true});
+m.addEventListener('touchend',later,{passive:true});
+m.addEventListener('touchcancel',later,{passive:true});
+m.addEventListener('pointerdown',function(e){if(e.pointerType!=='touch')stop();});
+m.addEventListener('pointerup',function(e){if(e.pointerType!=='touch')later();});
+m.addEventListener('scroll',function(){
+var h=half();
+if(m.scrollLeft>=h){m.scrollLeft=m.scrollLeft-h;if(!s.paused)s.pos-=h;}
+else if(s.paused&&m.scrollLeft<=0){m.scrollLeft=h;}
+if(s.paused)later();
+},{passive:true});
+if('IntersectionObserver' in window){new IntersectionObserver(function(es){s.vis=es[0].isIntersecting;if(s.vis&&!s.paused)s.pos=m.scrollLeft;}).observe(m);}
+st.push(s);
+});
+var last=0;
+function tick(now){
+var dt=Math.min(now-last,50)/1000;last=now;
+if(mq2.matches&&!rm.matches&&!document.hidden){
+st.forEach(function(s){if(s.paused||!s.vis)return;s.pos+=s.speed*dt;s.m.scrollLeft=s.pos;});
+}
+requestAnimationFrame(tick);
+}
+if(st.length)requestAnimationFrame(function(n){last=n;tick(n);});
 var mq=window.matchMedia('(max-width:640px)');
 function fab(){document.documentElement.classList.toggle('hfcf-fab-hide',mq.matches&&window.scrollY<500);}
 window.addEventListener('scroll',fab,{passive:true});mq.addEventListener&&mq.addEventListener('change',fab);fab();
