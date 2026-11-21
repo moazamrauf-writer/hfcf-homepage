@@ -23,6 +23,28 @@ a{color:inherit;text-decoration:none}
 a:focus-visible{outline:3px solid #00FFC8;outline-offset:3px}
 img{display:block;max-width:100%}
 html{scroll-behavior:smooth}
+
+a,button{transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease,color .2s ease,border-color .2s ease}
+article[style*="border-radius:16px"],a[style*="border-radius:16px"],a[style*="border-radius:14px"]{transition:transform .3s ease,box-shadow .3s ease}
+article[style*="border-radius:16px"]:hover,a[style*="border-radius:16px"]:hover,a[style*="border-radius:14px"]:hover{transform:translateY(-5px);box-shadow:0 14px 32px rgba(2,13,25,.12)}
+a[style*="border-radius:10px"]:hover,a[style*="border-radius:100px"]:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(2,13,25,.18)}
+button:hover{transform:translateY(-1px)}
+@keyframes hfcf-pulse{0%,100%{box-shadow:0 8px 24px rgba(2,13,25,.28),0 0 0 0 rgba(0,255,200,.55)}60%{box-shadow:0 8px 24px rgba(2,13,25,.28),0 0 0 14px rgba(0,255,200,0)}}
+@keyframes hfcf-beat{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+@keyframes hfcf-rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.hfcf-trust{grid-auto-rows:auto}
+@media (prefers-reduced-motion:no-preference){
+a[aria-label="Give now"]{animation:hfcf-pulse 3.2s ease-out infinite}
+a[aria-label="Give now"] svg{animation:hfcf-beat 1.6s ease-in-out infinite}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+@media (prefers-reduced-motion:no-preference){
+@supports (animation-timeline:view()){
+section>div[style*="max-width"]>*:not(.hfcf-g3):not(.hfcf-g4){animation:hfcf-rise linear backwards;animation-timeline:view();animation-range:entry 0% entry 80%}
+.hfcf-g3>*,.hfcf-g4>*{animation:hfcf-rise linear backwards;animation-timeline:view();animation-range:entry 0% entry 50%}
+}
+}
 </style>
 </head>
 <body>
@@ -45,7 +67,6 @@ HFC Foundation
 <a href="about.html">About Us</a>
 <a href="news.html">News</a>
 <a href="blog.html">Blog</a>
-<a href="#contact">Contact</a>
 <a href="faq.html">FAQs</a>
 <a href="#give" style="padding:11px 26px;border-radius:100px;border:2px solid #00FFC8;color:#ffffff;font-weight:600">Give Now</a>
 </nav>
@@ -157,33 +178,29 @@ HFC Foundation
 </section>
 
 <!-- SECTION 2 · TRUST -->
-<section id="trust" style="padding:56px 48px;background:#ffffff">
+<section id="trust" style="padding:36px 48px;background:#ffffff">
 <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
 <span style="align-self:flex-start;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#0B5D4E;background:#DDF8F1;padding:4px 10px;border-radius:6px">Section 2 · Trust</span>
-<div class="hfcf-g4">
-<a href="#certificate-secp" style="border:1px solid #d6e2e0;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:12px;background:#f7fbfa">
-<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#0B7A66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6l8-3z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg>
-<h3 style="margin:0;font-size:19px;color:#020D19;line-height:1.3">SECP-Registered</h3>
-<span style="font-size:15px">A Section 42 company, Licence No. 3066</span>
-<span style="font-size:14px;font-weight:600;color:#0B5D4E;margin-top:auto">See the Certificate (PDF)</span>
+<div class="hfcf-g4 hfcf-trust">
+<a href="#certificate-secp" class="hfcf-tcard" style="border:1px solid #d6e2e0;border-radius:14px;padding:16px 18px;display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:6px;background:#f7fbfa">
+<span style="display:flex;gap:12px;align-items:flex-start"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0B7A66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:0 0 28px;margin-top:1px"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6l8-3z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg><span style="font-family:Onest,Inter,system-ui,sans-serif;font-weight:600;font-size:17px;color:#020D19;line-height:1.3">SECP-Registered</span></span>
+<span style="font-size:14.5px;line-height:1.45">A Section 42 company, Licence No. 3066</span>
+<span style="font-size:14px;font-weight:600;color:#0B5D4E;align-self:end">See the Certificate (PDF)</span>
 </a>
-<a href="#certificate-pcc" style="border:1px solid #d6e2e0;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:12px;background:#f7fbfa">
-<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#0B7A66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16"></path><path d="M6 20V10m6 10V10m6 10V10"></path><path d="M3 10l9-6 9 6"></path></svg>
-<h3 style="margin:0;font-size:19px;color:#020D19;line-height:1.3">Registered with the Punjab Charities Commission</h3>
-<span style="font-size:15px">Approved to work as a charity in Punjab</span>
-<span style="font-size:14px;font-weight:600;color:#0B5D4E;margin-top:auto">See the Certificate (PDF)</span>
+<a href="#certificate-pcc" class="hfcf-tcard" style="border:1px solid #d6e2e0;border-radius:14px;padding:16px 18px;display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:6px;background:#f7fbfa">
+<span style="display:flex;gap:12px;align-items:flex-start"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0B7A66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:0 0 28px;margin-top:1px"><path d="M4 20h16"></path><path d="M6 20V10m6 10V10m6 10V10"></path><path d="M3 10l9-6 9 6"></path></svg><span style="font-family:Onest,Inter,system-ui,sans-serif;font-weight:600;font-size:17px;color:#020D19;line-height:1.3">Registered with the Punjab Charities Commission</span></span>
+<span style="font-size:14.5px;line-height:1.45">Approved to work as a charity in Punjab</span>
+<span style="font-size:14px;font-weight:600;color:#0B5D4E;align-self:end">See the Certificate (PDF)</span>
 </a>
-<a href="#certificate-shariah" style="border:1px solid #d6e2e0;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:12px;background:#f7fbfa">
-<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#0B7A66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path></svg>
-<h3 style="margin:0;font-size:19px;color:#020D19;line-height:1.3">Shariah-Compliance Certificate</h3>
-<span style="font-size:15px">Confirms our work meets Shariah requirements</span>
-<span style="font-size:14px;font-weight:600;color:#0B5D4E;margin-top:auto">See the Certificate (PDF)</span>
+<a href="#certificate-shariah" class="hfcf-tcard" style="border:1px solid #d6e2e0;border-radius:14px;padding:16px 18px;display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:6px;background:#f7fbfa">
+<span style="display:flex;gap:12px;align-items:flex-start"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0B7A66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:0 0 28px;margin-top:1px"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path></svg><span style="font-family:Onest,Inter,system-ui,sans-serif;font-weight:600;font-size:17px;color:#020D19;line-height:1.3">Shariah-Compliance Certificate</span></span>
+<span style="font-size:14.5px;line-height:1.45">Confirms our work meets Shariah requirements</span>
+<span style="font-size:14px;font-weight:600;color:#0B5D4E;align-self:end">See the Certificate (PDF)</span>
 </a>
-<a href="#certificate-tax" style="border:1px solid #d6e2e0;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:12px;background:#f7fbfa">
-<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#0B7A66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h8l4 4v14H7z"></path><path d="M15 3v4h4"></path><path d="M10 13h6M10 17h6"></path></svg>
-<h3 style="margin:0;font-size:19px;color:#020D19;line-height:1.3">Tax-Exemption Certificate</h3>
-<span style="font-size:15px">Recognised as a tax-exempt organisation</span>
-<span style="font-size:14px;font-weight:600;color:#0B5D4E;margin-top:auto">See the Certificate (PDF)</span>
+<a href="#certificate-tax" class="hfcf-tcard" style="border:1px solid #d6e2e0;border-radius:14px;padding:16px 18px;display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:6px;background:#f7fbfa">
+<span style="display:flex;gap:12px;align-items:flex-start"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0B7A66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:0 0 28px;margin-top:1px"><path d="M7 3h8l4 4v14H7z"></path><path d="M15 3v4h4"></path><path d="M10 13h6M10 17h6"></path></svg><span style="font-family:Onest,Inter,system-ui,sans-serif;font-weight:600;font-size:17px;color:#020D19;line-height:1.3">Tax-Exemption Certificate</span></span>
+<span style="font-size:14.5px;line-height:1.45">Recognised as a tax-exempt organisation</span>
+<span style="font-size:14px;font-weight:600;color:#0B5D4E;align-self:end">See the Certificate (PDF)</span>
 </a>
 </div>
 </div>
@@ -552,7 +569,7 @@ HFC Foundation
 </section>
 
 <!-- FOOTER -->
-<footer id="contact" style="background:#020D19;color:#b9c6d1;padding:72px 48px 36px;border-top:1px solid #1d2d3c">
+<footer id="footer" style="background:#020D19;color:#b9c6d1;padding:72px 48px 36px;border-top:1px solid #1d2d3c">
 <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:44px">
 <div style="display:flex;flex-wrap:wrap;gap:40px">
 <div style="flex:1.4 1 320px;display:flex;flex-direction:column;gap:16px">

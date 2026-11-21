@@ -22,9 +22,31 @@ a{color:inherit;text-decoration:none}
 @media (prefers-reduced-motion:reduce){.hfcf-track{animation:none}.hfcf-marquee{overflow-x:auto}}
 a:focus-visible{outline:3px solid #00FFC8;outline-offset:3px}
 img{display:block;max-width:100%}
+
+a,button{transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease,color .2s ease,border-color .2s ease}
+article[style*="border-radius:16px"],a[style*="border-radius:16px"],a[style*="border-radius:14px"]{transition:transform .3s ease,box-shadow .3s ease}
+article[style*="border-radius:16px"]:hover,a[style*="border-radius:16px"]:hover,a[style*="border-radius:14px"]:hover{transform:translateY(-5px);box-shadow:0 14px 32px rgba(2,13,25,.12)}
+a[style*="border-radius:10px"]:hover,a[style*="border-radius:100px"]:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(2,13,25,.18)}
+button:hover{transform:translateY(-1px)}
+@keyframes hfcf-pulse{0%,100%{box-shadow:0 8px 24px rgba(2,13,25,.28),0 0 0 0 rgba(0,255,200,.55)}60%{box-shadow:0 8px 24px rgba(2,13,25,.28),0 0 0 14px rgba(0,255,200,0)}}
+@keyframes hfcf-beat{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+@keyframes hfcf-rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.hfcf-trust{grid-auto-rows:auto}
+@media (prefers-reduced-motion:no-preference){
+a[aria-label="Give now"]{animation:hfcf-pulse 3.2s ease-out infinite}
+a[aria-label="Give now"] svg{animation:hfcf-beat 1.6s ease-in-out infinite}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
 html{scroll-behavior:smooth}
 summary::-webkit-details-marker{display:none}
 details[open] summary span{transform:rotate(45deg)}
+@media (prefers-reduced-motion:no-preference){
+@supports (animation-timeline:view()){
+section>div[style*="max-width"]>*:not(.hfcf-g3):not(.hfcf-g4){animation:hfcf-rise linear backwards;animation-timeline:view();animation-range:entry 0% entry 80%}
+.hfcf-g3>*,.hfcf-g4>*{animation:hfcf-rise linear backwards;animation-timeline:view();animation-range:entry 0% entry 50%}
+}
+}
+
 </style>
 </head>
 <body>
@@ -43,7 +65,6 @@ HFC Foundation
 <a href="about.html">About Us</a>
 <a href="news.html">News</a>
 <a href="blog.html" style="color:#00FFC8;border-bottom:2px solid #00FFC8;padding-bottom:2px">Blog</a>
-<a href="#contact">Contact</a>
 <a href="faq.html">FAQs</a>
 <a href="index.html#give" style="padding:11px 26px;border-radius:100px;border:2px solid #00FFC8;color:#ffffff;font-weight:600">Give Now</a>
 </nav>
@@ -113,7 +134,7 @@ HFC Foundation
 </section>
 
 <!-- FOOTER -->
-<footer id="contact" style="background:#020D19;color:#b9c6d1;padding:72px 48px 36px;border-top:1px solid #1d2d3c">
+<footer id="footer" style="background:#020D19;color:#b9c6d1;padding:72px 48px 36px;border-top:1px solid #1d2d3c">
 <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:44px">
 <div style="display:flex;flex-wrap:wrap;gap:40px">
 <div style="flex:1.4 1 320px;display:flex;flex-direction:column;gap:16px">
