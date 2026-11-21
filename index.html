@@ -43,10 +43,10 @@ HFC Foundation
 <a href="#care">How We Care</a>
 <a href="#give">Ways to Give</a>
 <a href="about.html">About Us</a>
-<a href="#news">News</a>
-<a href="#blog">Blog</a>
+<a href="news.html">News</a>
+<a href="blog.html">Blog</a>
 <a href="#contact">Contact</a>
-<a href="#faq">FAQs</a>
+<a href="faq.html">FAQs</a>
 <a href="#give" style="padding:11px 26px;border-radius:100px;border:2px solid #00FFC8;color:#ffffff;font-weight:600">Give Now</a>
 </nav>
 <div style="color:#ffffff;font-size:14px;line-height:1.4"><span style="color:#00FFC8;font-weight:600">Need help?</span><br>+92 322 071 1929</div>
@@ -377,7 +377,7 @@ HFC Foundation
 </div>
 <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center">
 <a href="#give" style="background:#00FFC8;color:#020D19;font-weight:600;padding:16px 30px;border-radius:10px">Help a Girl Like Her</a>
-<a href="#girls-stories" style="font-weight:600;color:#0B5D4E">Read More Girls' Stories</a>
+<a href="#stories" style="font-weight:600;color:#0B5D4E">Read More Girls' Stories</a>
 </div>
 </div>
 </div>
@@ -394,7 +394,7 @@ HFC Foundation
 <div style="padding:24px;display:flex;flex-direction:column;gap:10px;flex:1">
 <h3 style="margin:0;font-size:21px;color:#020D19">A Place in School</h3>
 <p style="margin:0;font-size:16px">Fees, books, uniform and extra tuition, so she catches up, keeps up and starts to believe she can.</p>
-<a href="#education" style="margin-top:auto;font-weight:600;color:#0B5D4E">Read More</a>
+<a href="education.html" style="margin-top:auto;font-weight:600;color:#0B5D4E">Read More</a>
 </div>
 </article>
 <article style="flex:1 1 250px;background:#ffffff;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
@@ -402,7 +402,7 @@ HFC Foundation
 <div style="padding:24px;display:flex;flex-direction:column;gap:10px;flex:1">
 <h3 style="margin:0;font-size:21px;color:#020D19">Good Health, Body and Mind</h3>
 <p style="margin:0;font-size:16px">Balanced meals, regular check-ups and someone to talk to when things feel heavy.</p>
-<a href="#health" style="margin-top:auto;font-weight:600;color:#0B5D4E">Read More</a>
+<a href="health.html" style="margin-top:auto;font-weight:600;color:#0B5D4E">Read More</a>
 </div>
 </article>
 <article style="flex:1 1 250px;background:#ffffff;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
@@ -410,7 +410,7 @@ HFC Foundation
 <div style="padding:24px;display:flex;flex-direction:column;gap:10px;flex:1">
 <h3 style="margin:0;font-size:21px;color:#020D19">Room to Discover Herself</h3>
 <p style="margin:0;font-size:16px">Art, sport, debate, computers and Quran or Hifz, so she finds out what she's good at.</p>
-<a href="#skills" style="margin-top:auto;font-weight:600;color:#0B5D4E">Read More</a>
+<a href="skills.html" style="margin-top:auto;font-weight:600;color:#0B5D4E">Read More</a>
 </div>
 </article>
 <article style="flex:1 1 250px;background:#ffffff;border-radius:16px;overflow:hidden;display:flex;flex-direction:column">
@@ -418,7 +418,7 @@ HFC Foundation
 <div style="padding:24px;display:flex;flex-direction:column;gap:10px;flex:1">
 <h3 style="margin:0;font-size:21px;color:#020D19">A Safe Home</h3>
 <p style="margin:0;font-size:16px">Warm routines, caretakers who show up every day and a safeguarding promise behind every door.</p>
-<a href="#safeguarding" style="margin-top:auto;font-weight:600;color:#0B5D4E">Read More</a>
+<a href="safe-home.html" style="margin-top:auto;font-weight:600;color:#0B5D4E">Read More</a>
 </div>
 </article>
 </div>
@@ -430,10 +430,46 @@ HFC Foundation
 <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
 <span style="align-self:flex-start;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#00FFC8;background:rgba(255,255,255,0.1);padding:4px 10px;border-radius:6px">Section 6 · Your gift</span>
 
-<div style="display:flex;flex-wrap:wrap;gap:48px;align-items:center">
-<div style="flex:1 1 460px;display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;flex-direction:column;gap:14px;max-width:760px">
 <h2 style="margin:0;font-size:clamp(30px,3.6vw,46px);line-height:1.15;color:#ffffff">Here's What Your Gift <span style="color:#00FFC8">Does</span></h2>
-<p style="margin:0;font-size:19px;color:#e8eef3">Rs. 35,000 a month gives one girl everything she needs.</p>
+<p style="margin:0;font-size:19px;color:#e8eef3">Rs. 35,000 a month gives one girl everything she needs. Choose what you would like to give.</p>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:36px;align-items:flex-start">
+
+<form id="give-form" onsubmit="return false" style="flex:1.15 1 500px;min-width:0;background:#ffffff;color:#3d4852;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:22px;box-sizing:border-box">
+
+<div role="group" aria-label="How often" style="display:flex;gap:4px;padding:4px;background:#EEF6F4;border-radius:100px">
+<button type="button" id="g-monthly" aria-pressed="true" style="flex:1;font-family:Onest,sans-serif;font-weight:600;font-size:16px;padding:13px 10px;border:0;border-radius:100px;cursor:pointer;background:#020D19;color:#ffffff">Give Monthly</button>
+<button type="button" id="g-once" aria-pressed="false" style="flex:1;font-family:Onest,sans-serif;font-weight:600;font-size:16px;padding:13px 10px;border:0;border-radius:100px;cursor:pointer;background:transparent;color:#020D19">Give Once</button>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px">
+<span style="font-family:Onest,sans-serif;font-weight:600;font-size:17px;color:#020D19">Choose an Amount</span>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px">
+<span id="g-presets" style="display:contents"></span>
+<label style="display:flex;align-items:center;gap:6px;border:2px solid #b9c6d1;border-radius:12px;padding:0 12px;background:#ffffff;min-width:0">
+<span style="font-weight:600;color:#020D19;font-size:16px">Rs.</span>
+<input type="text" id="g-custom" inputmode="numeric" aria-label="Other amount in rupees" placeholder="Other" style="width:100%;min-width:0;border:0;outline:0;background:transparent;font-family:Onest,sans-serif;font-weight:600;font-size:18px;color:#020D19;padding:16px 0">
+</label>
+</div>
+<span id="g-min" style="font-size:14px;color:#8a1f1f;display:none">Please enter at least Rs. 500.</span>
+<div id="g-impact" aria-live="polite" style="background:#EEF6F4;border-radius:12px;padding:14px 16px;font-size:17px;color:#020D19;min-height:26px"></div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px">
+<span style="font-family:Onest,sans-serif;font-weight:600;font-size:17px;color:#020D19">I'm Giving As</span>
+<div id="g-funds" role="group" aria-label="Type of gift" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px"></div>
+<span id="g-fundnote" aria-live="polite" style="font-size:15px;color:#3d4852"></span>
+</div>
+
+<button type="button" id="g-give" style="font-family:Onest,sans-serif;font-weight:700;font-size:19px;padding:18px 24px;border-radius:12px;border:2px solid #020D19;cursor:pointer;width:100%;background:#00FFC8;color:#020D19">Give</button>
+<div id="g-tried" role="status" style="display:none;background:#020D19;color:#e8eef3;border-radius:12px;padding:16px 18px;font-size:15px">Online card payment is coming soon. For now, please use the bank details below, or call us on +92 322 071 1929 and we will help you give. Please tell us if your gift is Zakat.</div>
+<span style="font-size:14px;text-align:center">An official receipt is provided for every gift.</span>
+</form>
+
+<div style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:26px">
+<img src="gift.jpg" alt="Girls talking and laughing together in the garden" style="width:100%;border-radius:20px;aspect-ratio:3/2;object-fit:cover">
 <table style="width:100%;border-collapse:collapse;font-size:17px">
 <thead><tr><th scope="col" style="text-align:left;padding:10px 0;color:#00FFC8;font-weight:600;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;border-bottom:1px solid #2a3b4b">Each month</th><th scope="col" style="text-align:left;padding:10px 0;color:#00FFC8;font-weight:600;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;border-bottom:1px solid #2a3b4b">What it pays for</th></tr></thead>
 <tbody>
@@ -444,30 +480,8 @@ HFC Foundation
 <tr><td style="padding:14px 0;border-bottom:1px solid #1d2d3c;color:#ffffff;font-weight:600;font-variant-numeric:tabular-nums">Rs. 5,000</td><td style="padding:14px 0;border-bottom:1px solid #1d2d3c">Keeps the home running</td></tr>
 </tbody>
 </table>
-<div><a href="#sponsor" style="display:inline-block;background:#00FFC8;color:#020D19;font-weight:600;padding:16px 34px;border-radius:10px">Sponsor a Girl</a></div>
-</div>
-<img src="gift.jpg" alt="Girls talking and laughing together in the garden" style="flex:1 1 380px;width:100%;max-width:520px;border-radius:20px;aspect-ratio:3/2;object-fit:cover">
 </div>
 
-<div style="display:flex;flex-direction:column;gap:20px">
-<h3 style="margin:0;font-size:24px;color:#ffffff">Choose How You Give.</h3>
-<div style="display:flex;flex-wrap:wrap;gap:20px">
-<div style="flex:1 1 280px;background:#0b1c2c;border:1px solid #1f3346;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:12px">
-<h3 style="margin:0;font-size:22px;color:#ffffff">Zakat</h3>
-<p style="margin:0">Your Zakat supports girls who are eligible to receive it. Please tell us when your gift is Zakat.</p>
-<a href="#zakat" style="margin-top:auto;color:#00FFC8;font-weight:600">Give Zakat</a>
-</div>
-<div style="flex:1 1 280px;background:#0b1c2c;border:1px solid #1f3346;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:12px">
-<h3 style="margin:0;font-size:22px;color:#ffffff">Sadaqah</h3>
-<p style="margin:0">Give Frequently. Regular Sadaqah provides you and your family spiritual protection.</p>
-<a href="#sadaqah" style="margin-top:auto;color:#00FFC8;font-weight:600">Give Sadaqah</a>
-</div>
-<div style="flex:1 1 280px;background:#0b1c2c;border:1px solid #1f3346;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:12px">
-<h3 style="margin:0;font-size:22px;color:#ffffff">Ramadan</h3>
-<p style="margin:0">Make every day of Ramadan count for a girl who is counting on you.</p>
-<a href="#ramadan" style="margin-top:auto;color:#00FFC8;font-weight:600">Give This Ramadan</a>
-</div>
-</div>
 </div>
 
 <blockquote style="margin:0;border-left:4px solid #00FFC8;padding:8px 0 8px 28px;display:flex;flex-direction:column;gap:10px">
@@ -549,10 +563,10 @@ HFC Foundation
 </div>
 <div style="flex:1 1 180px;display:flex;flex-direction:column;gap:10px;font-size:15px">
 <strong style="color:#ffffff">How We Care</strong>
-<a href="#education">Education and Learning</a>
-<a href="#health">Health and Wellbeing</a>
-<a href="#skills">Skills and Creativity</a>
-<a href="#safeguarding">Safe Home and Safeguarding</a>
+<a href="education.html">Education and Learning</a>
+<a href="health.html">Health and Wellbeing</a>
+<a href="skills.html">Skills and Creativity</a>
+<a href="safe-home.html">Safe Home and Safeguarding</a>
 </div>
 <div style="flex:1 1 180px;display:flex;flex-direction:column;gap:10px;font-size:15px">
 <strong style="color:#ffffff">Give</strong>
@@ -565,10 +579,10 @@ HFC Foundation
 <strong style="color:#ffffff">Learn More</strong>
 <a href="about.html">About Us</a>
 <a href="about.html#team">Our Team</a>
-<a href="#girls-stories">Girls' Stories</a>
-<a id="news" href="#news">News</a>
-<a id="blog" href="#blog">Blog</a>
-<a id="faq" href="#faq">FAQs</a>
+<a href="#stories">Girls' Stories</a>
+<a id="news" href="news.html">News</a>
+<a id="blog" href="blog.html">Blog</a>
+<a id="faq" href="faq.html">FAQs</a>
 <a href="#privacy">Privacy Policy</a>
 <a href="#terms">Terms</a>
 </div>
@@ -600,6 +614,67 @@ document.getElementById('hfcf-next').addEventListener('click',function(){go(i+1)
 for(var d=0;d<n;d++)(function(k){dots[k].addEventListener('click',function(){go(k);});})(d);
 var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!reduce)timer=setInterval(function(){show(i+1);},8000);
+})();
+</script>
+<script>
+(function(){
+var S={freq:'monthly',preset:15000,custom:'',fund:'general',tried:false};
+var lists={m:[2000,5000,8000,15000,35000],o:[5000,10000,25000,50000,100000]};
+var says={m:{2000:'pays for a doctor when a girl needs one',5000:'gives a girl a bed and a caretaker',8000:'feeds a girl',15000:'keeps a girl in school',35000:'gives one girl everything she needs'},
+o:{5000:'gives a girl a bed and a caretaker for a month',10000:'feeds a girl for a month and pays for a doctor when she needs one',25000:'keeps a girl in school, feeds her and covers a doctor for a month',50000:'gives one girl everything she needs for a month, and helps keep the home running',100000:'gives almost three girls everything they need for a month'}};
+var fundInfo=[{id:'zakat',title:'Zakat',desc:'For girls eligible to receive it'},{id:'sadaqah',title:'Sadaqah',desc:'Voluntary giving, any time'},{id:'general',title:'General Donation',desc:'Where it is needed most'}];
+var notes={zakat:'We will record this gift as Zakat and use it only for girls who are eligible to receive it.',sadaqah:'Regular Sadaqah gives you and your family spiritual protection. Giving monthly is a good way to keep it up.',general:"Your gift goes wherever it is needed most for the girls' care."};
+var segOn='flex:1;font-family:Onest,sans-serif;font-weight:600;font-size:16px;padding:13px 10px;border:0;border-radius:100px;cursor:pointer;background:#020D19;color:#ffffff';
+var segOff='flex:1;font-family:Onest,sans-serif;font-weight:600;font-size:16px;padding:13px 10px;border:0;border-radius:100px;cursor:pointer;background:transparent;color:#020D19';
+function $(id){return document.getElementById(id);}
+function fmt(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,',');}
+function render(){
+var monthly=S.freq==='monthly',key=monthly?'m':'o';
+var customNum=S.custom?parseInt(S.custom,10):0;
+var amount=S.custom?customNum:S.preset;
+var valid=amount>=500;
+$('g-monthly').style.cssText=monthly?segOn:segOff;$('g-monthly').setAttribute('aria-pressed',monthly);
+$('g-once').style.cssText=monthly?segOff:segOn;$('g-once').setAttribute('aria-pressed',!monthly);
+var box=$('g-presets');box.innerHTML='';
+lists[key].forEach(function(n){
+var on=!S.custom&&S.preset===n;
+var b=document.createElement('button');b.type='button';b.textContent='Rs. '+fmt(n);b.setAttribute('aria-pressed',on);
+b.style.cssText='font-family:Onest,sans-serif;font-weight:600;font-size:18px;padding:16px 8px;border-radius:12px;cursor:pointer;color:#020D19;border:2px solid '+(on?'#020D19':'#b9c6d1')+';background:'+(on?'#00FFC8':'#ffffff');
+b.onclick=function(){S.preset=n;S.custom='';S.tried=false;render();};
+box.appendChild(b);
+});
+if($('g-custom').value!==S.custom)$('g-custom').value=S.custom;
+$('g-min').style.display=(S.custom&&!valid)?'block':'none';
+var impact="Whatever you give goes to a girl's care: a safe bed, food, school and a doctor.";
+if(valid){var line=S.custom?'':(says[key][S.preset]||'');
+impact=line?('Rs. '+fmt(amount)+(monthly?' a month ':' ')+line+'.'):('Rs. '+fmt(amount)+(monthly?' a month':'')+' helps a girl stay safe, fed and in school. Thank you.');}
+$('g-impact').textContent=impact;
+var fb=$('g-funds');fb.innerHTML='';
+fundInfo.forEach(function(f){
+var on=S.fund===f.id;
+var b=document.createElement('button');b.type='button';b.setAttribute('aria-pressed',on);
+b.style.cssText='text-align:left;display:flex;flex-direction:column;gap:4px;padding:14px;border-radius:12px;cursor:pointer;border:2px solid '+(on?'#020D19':'#b9c6d1')+';background:'+(on?'#DDF8F1':'#ffffff');
+b.innerHTML='<span style="font-family:Onest,sans-serif;font-weight:600;font-size:17px;color:#020D19">'+f.title+'</span><span style="font-size:13px;line-height:1.4;color:#3d4852">'+f.desc+'</span>';
+b.onclick=function(){S.fund=f.id;S.tried=false;render();};
+fb.appendChild(b);
+});
+$('g-fundnote').textContent=notes[S.fund];
+var g=$('g-give');
+g.textContent=valid?('Give Rs. '+fmt(amount)+(monthly?' a Month':'')):'Choose an Amount';
+g.style.background=valid?'#00FFC8':'#e3ebe9';g.style.color=valid?'#020D19':'#6b7a86';
+$('g-tried').style.display=S.tried?'block':'none';
+}
+$('g-monthly').onclick=function(){S.freq='monthly';S.preset=15000;S.custom='';S.tried=false;render();};
+$('g-once').onclick=function(){S.freq='once';S.preset=25000;S.custom='';S.tried=false;render();};
+$('g-custom').oninput=function(){S.custom=this.value.replace(/\D/g,'').slice(0,7);S.tried=false;render();};
+$('g-give').onclick=function(){var a=S.custom?parseInt(S.custom,10):S.preset;if(a>=500){S.tried=true;render();}};
+function fromHash(){
+var h=(location.hash||'').toLowerCase();
+if(h==='#zakat'||h==='#sadaqah'||h==='#ramadan'){
+S.fund=h==='#sadaqah'?'sadaqah':(h==='#zakat'?'zakat':S.fund);render();
+var t=document.getElementById('give');if(t)t.scrollIntoView();}
+}
+render();fromHash();window.addEventListener('hashchange',fromHash);
 })();
 </script>
 </body>
